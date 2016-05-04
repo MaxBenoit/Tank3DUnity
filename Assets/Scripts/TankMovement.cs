@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TankMovement : MonoBehaviour {
+public class TankMovement : MonoBehaviour 
+{
+    float RotationY;
 
 	// Use this for initialization
 	void Start () {
@@ -11,6 +13,7 @@ public class TankMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //ManageMesh();
+
         if (Input.GetKey(KeyCode.A))
         {
             GetComponent<Transform>().Rotate(Vector3.up, -1f);
@@ -21,11 +24,11 @@ public class TankMovement : MonoBehaviour {
         }
         if (Input.GetKey(KeyCode.W))
         {
-            GetComponent<Rigidbody>().velocity = new Vector3(-5 * Mathf.Sin(GetComponent<Transform>().rotation.y), 0, -5 * Mathf.Cos(GetComponent<Transform>().rotation.y));
+            GetComponent<Rigidbody>().velocity = new Vector3(-100 * Mathf.Deg2Rad * Mathf.Sin(GetComponent<Transform>().rotation.y), 0, -100 * Mathf.Deg2Rad * Mathf.Cos(GetComponent<Transform>().rotation.y));
         }
         if (Input.GetKey(KeyCode.S))
         {
-            GetComponent<Rigidbody>().velocity = new Vector3(5 * Mathf.Sin(GetComponent<Transform>().rotation.y), 0, 5 * Mathf.Cos(GetComponent<Transform>().rotation.y));
+            GetComponent<Rigidbody>().velocity = new Vector3(100 * Mathf.Sin(GetComponent<Transform>().rotation.y), 0, 100 * Mathf.Cos(GetComponent<Transform>().rotation.y));
         }
 	}
 
@@ -48,5 +51,10 @@ public class TankMovement : MonoBehaviour {
         {
             GetComponentInChildren<Transform>().Rotate(Vector3.right, -1f);
         }
+    }
+
+    float ManageKeys(KeyCode key)
+    {
+        return Input.GetKey(key) ? 1f : 0;
     }
 }
