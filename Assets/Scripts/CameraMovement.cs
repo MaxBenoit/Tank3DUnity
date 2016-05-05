@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraMovement : MonoBehaviour {
+public class CameraMovement : MonoBehaviour 
+{
+    Transform transform;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+    {
+        transform = GetComponent<Transform>();
 	}
 	
 	// Update is called once per frame
