@@ -15,6 +15,9 @@ public class CameraMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
+        
+
+
         if (Input.mousePosition.x > Screen.width / 2 + Screen.width / 8)
         {
             GetComponent<Transform>().Rotate(target.transform.up, 0.5f);
