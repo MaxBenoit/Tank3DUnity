@@ -16,4 +16,12 @@ public class Bullet : MonoBehaviour
         Vector3 movement = transform.right * 20f * Time.deltaTime;
         rigidbody.MovePosition(rigidbody.position - movement);
 	}
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.name == "Terrain")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
