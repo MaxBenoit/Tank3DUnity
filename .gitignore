@@ -4,6 +4,7 @@ Obj/
 UnityGenerated/
 Library/
 _.swp
+*.pidb.meta
  
 # ----[ Visual Studio / MonoDevelop generated ]------- #
  
