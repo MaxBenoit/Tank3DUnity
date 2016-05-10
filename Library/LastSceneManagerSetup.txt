@@ -1,4 +1,0 @@
-sceneSetups:
-- path: "Assets/Scenes/d\xE9sert.unity"
-  isLoaded: 1
-  isActive: 1
